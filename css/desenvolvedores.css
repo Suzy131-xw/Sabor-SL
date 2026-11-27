@@ -1,0 +1,148 @@
+/* DESENVOLVEDORES */
+
+/* Organiza os cards dos desenvolvedores
+   em colunas para deixar a equipe bem distribuída */
+.caixa-equipe {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+/* Define o visual de cada card
+   e organiza as informações no centro */
+.membro-equipe {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background: #ffffff;
+
+    border: 1px solid var(--line);
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    gap: 20px;
+
+    transition: 0.2s;
+}
+
+/* Cria um pequeno movimento no card
+   quando o mouse passa sobre ele */
+.membro-equipe:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Deixa a foto dos desenvolvedores redonda
+   e mantém a imagem bem ajustada ao espaço */
+.avatar-equipe {
+    width: 180px;
+    height: 180px;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+
+    border: 3px solid #e8f4ed;
+}
+
+/* Define o estilo e o tamanho
+   do nome de cada desenvolvedor */
+.membro-equipe h3 {
+    margin: 0;
+
+    font-size: 14px;
+
+    color: var(--text);
+}
+
+/* Organiza o texto que apresenta
+   uma breve descrição do desenvolvedor */
+.membro-equipe p {
+    margin: 0;
+
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+/* Destaca o contato do desenvolvedor
+   para facilitar sua visualização no card */
+.contato-desenvolvedor {
+    font-size: 11px;
+
+    color: var(--green2);
+
+    font-weight: bold;
+}
+
+/* RESPONSIVIDADE EXCLUSIVA PARA CELULAR */
+@media screen and (max-width: 767px) {
+
+    /* Coloca cada desenvolvedor em uma linha */
+    .caixa-equipe {
+        display: grid !important;
+        grid-template-columns: minmax(0, 1fr) !important;
+        grid-auto-flow: row;
+        gap: 18px;
+        width: 100%;
+        max-width: 100%;
+        margin-top: 20px;
+        box-sizing: border-box;
+    }
+
+    /* Impede os cards de ultrapassarem a tela */
+    .membro-equipe {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+
+        padding: 20px 15px;
+        gap: 12px;
+        border-radius: 15px;
+    }
+
+    /* Ajusta as fotos */
+    .avatar-equipe {
+        width: 120px;
+        height: 120px;
+        min-width: 120px;
+        max-width: 100%;
+        object-fit: cover;
+    }
+
+    /* Ajusta os nomes */
+    .membro-equipe h3 {
+        font-size: 15px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Ajusta as descrições */
+    .membro-equipe p {
+        font-size: 12px;
+        line-height: 1.5;
+        overflow-wrap: anywhere;
+    }
+
+    /* Ajusta os contatos */
+    .contato-desenvolvedor {
+        font-size: 12px;
+        overflow-wrap: anywhere;
+        text-align: center;
+    }
+}

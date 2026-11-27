@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <!-- Define a codificação dos caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Adapta a página para celulares e outros dispositivos -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Entrar — Sabor SL</title>
+
+    <!-- Conecta o arquivo de estilos do site -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="pagina-login">
+
+    <div class="aplicacao">
+
+        <!-- Barra lateral de navegação -->
+        <aside class="barra-lateral">
+
+            <!-- Logo do Sabor SL -->
+            <div class="logo-lateral">
+                <img
+                    class="imagem-logo-lateral"
+                    src="img/logo.png"
+                    alt="Logo Sabor SL Delivery"
+                >
+            </div>
+
+            <!-- Links de navegação -->
+            <nav class="navegacao">
+
+                <a href="principal.html">
+                    <span class="icone-navegacao">🏠</span>
+                    <span>Início</span>
+                </a>
+
+                <a href="buscar.html">
+                    <span class="icone-navegacao">⌕</span>
+                    <span>Buscar</span>
+                </a>
+
+                <a href="perfil.html">
+                    <span class="icone-navegacao">👤</span>
+                    <span>Perfil</span>
+                </a>
+                
+                <a href="configuracoes.html">
+                    <span class="icone-navegacao">⚙</span>
+                    <span>Configurações</span>
+                </a>
+
+            </nav>
+
+            <!-- Informações sobre a área de entrega -->
+            <div class="entrega">
+                <div class="titulo-entrega">
+                    <span>🛵</span>
+                    <strong>Delivery local</strong>
+                </div>
+
+                <span>Santa Luzia - PB</span>
+            </div>
+
+        </aside>
+
+        <!-- Conteúdo principal: apresentação à esquerda e formulário à direita -->
+        <main class="principal login-principal">
+            <section class="login-layout">
+                <div class="login-hero">
+                    <img class="login-logo" src="img/logo.png" alt="Sabor SL Delivery">
+                    <p class="login-slogan">Seu sabor favorito<br>está por perto.</p>
+                    <p class="login-descricao">Encontre restaurantes, lanches e sobremesas em Santa Luzia - PB.</p>
+                    <div class="login-foto-comida" aria-hidden="true"></div>
+                </div>
+
+                <section class="pagina-conta">
+                    <h1>Bem-vindo ao Sabor SL!</h1>
+                    <p class="conta-intro">Entre ou crie sua conta para ter uma experiência ainda melhor.</p>
+
+                    <div class="modos-conta" role="group" aria-label="Escolha entre entrar ou criar conta">
+                        <button type="button" id="modo-entrar" class="modo-conta ativo">Entrar</button>
+                        <button type="button" id="modo-cadastro" class="modo-conta">Criar conta</button>
+                    </div>
+
+                    <form id="form-login" class="formulario-conta" data-modo="entrar">
+                        <label for="nome-conta" id="rotulo-nome">Seu nome
+                            <input id="nome-conta" name="nome" type="text" autocomplete="name" placeholder="Digite seu nome" hidden>
+                        </label>
+
+                        <label for="email-conta">E-mail
+                            <input id="email-conta" name="email" type="email" autocomplete="email" placeholder="seu@email.com" required>
+                        </label>
+
+                        <label for="senha-conta">Senha
+                            <input id="senha-conta" name="senha" type="password" autocomplete="current-password" minlength="4" placeholder="Mínimo de 4 caracteres" required>
+                        </label>
+
+                        <a class="esqueci-senha" href="#" onclick="return false;">Esqueceu sua senha?</a>
+
+                        <button id="enviar-conta" class="botao-verde" type="submit">Entrar →</button>
+
+                        <div class="separador-login"><span>ou</span></div>
+                        <div class="login-social" aria-label="Outras opções de acesso">
+                            <button type="button" disabled><span class="google-g">G</span> Entrar com Google</button>
+                            <button type="button" disabled><span class="apple-mark">●</span> Entrar com Apple</button>
+                        </div>
+                        <a class="link-conta" href="principal.html">Continuar sem login</a>
+                        <p id="mensagem-login" class="mensagem-conta" role="status" aria-live="polite" hidden></p>
+                    </form>
+                    <div class="login-rodape"><span>♥</span> Sabor SL — Delivery local de Santa Luzia - PB</div>
+                </section>
+            </section>
+        </main>
+
+    <!-- Conecta o JavaScript externo responsável pelo login -->
+    <script src="js/login.js" defer></script>
+
+</body>
+</html>

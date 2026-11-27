@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <!-- Configurações da página -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Nápoles Itáli — Sabor SL</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- Estrutura principal . -->
+
+    <div class="aplicacao">
+
+        <!-- Barra lateral -->
+        <aside class="barra-lateral">
+
+            <div class="logo-lateral">
+
+                <!-- A barra lateral exibe somente a imagem da logo. -->
+                <img class="imagem-logo-lateral" src="../img/logo.png" alt="Logo Sabor SL Delivery">
+
+            </div>
+
+
+            <!-- Menu -->
+            <nav class="navegacao">
+
+                <a href="../principal.html">
+                    🏠 <span>Início</span>
+                </a>
+
+                <a href="../restaurantes.html">
+                    🍴 <span>Restaurantes</span>
+                </a>
+
+                <a href="../perfil.html">
+                    ♙ <span>Perfil</span>
+                </a>
+
+                <a href="../configuracoes.html">
+                    ⚙️ <span>Configurações</span>
+                </a>
+
+            </nav>
+
+
+            <div class="entrega">
+                🛵 <b>Delivery local</b>
+                <br>
+                Santa Luzia - PB
+            </div>
+
+        </aside>
+
+
+        <!-- Conteúdo principal -->
+        <main class="principal">
+
+            <!-- Botão voltar -->
+            <div class="barra-superior">
+
+                <a class="voltar" href="../restaurantes.html">
+                    ← Voltar
+                </a>
+
+            </div>
+
+
+             <!-- Perfil do estabelecimento -->
+
+            <section class="restaurante">
+
+                <!-- Foto do restaurante -->
+                <img
+                    class="capa-restaurante"
+                    src="../img/Pizza.jpeg"
+                    alt="Napóles Itali"
+                >
+
+
+                <!-- Informações -->
+                <div class="informacoes-restaurante">
+
+                    <div>
+
+                        <h1>
+                            Nápoles Itali
+                        </h1>
+
+                        <p>
+                            Pizzaria e Restaurante
+                        </p>
+
+
+                        <div class="etiquetas">
+
+                            <span class="etiqueta">
+                                ◷ 35-50 min
+                            </span>
+
+                            <span class="etiqueta">
+                                Santa Luzia - PB
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!--Botão que abre o WhatsApp-->
+                    <a
+                        class="contato-whatsapp"
+                        href="https://wa.me/558398394815"
+                        target="_blank"
+                    >
+                        💬 Pedir pelo WhatsApp
+                    </a>
+
+                </div>
+
+
+                <!-- CONTATO -->
+
+                <div class="cardapio">
+
+                    <h2>
+                        Contato
+                    </h2>
+
+                    <div class="item-menu">
+
+                        <div>
+
+                            <h3>
+                                WhatsApp
+                            </h3>
+
+                            <!-- número -->
+
+                            <p>
+                                (83) 9839-4815
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+            <!-- =====================================================
+                 LOCALIZAÇÃO DO ESTABELECIMENTO
+                 Para editar, preencha data-endereco com o endereço.
+                 O mapa será exibido dentro desta página, sem botão
+                 para abrir o Google Maps em outra aba.
+                 ===================================================== -->
+
+            <!-- =====================================================
+                 AVALIAÇÕES DOS CLIENTES
+                 As avaliações ficam separadas pelo identificador
+                 deste estabelecimento e são salvas no navegador.
+                 ===================================================== -->
+            <section class="secao-avaliacoes" data-avaliacoes data-estabelecimento="napoles">
+                <h2>⭐ Avaliações dos clientes</h2>
+                <p class="texto-apoio-avaliacoes">Conte como foi sua experiência com Nápoles Itáli.</p>
+
+                <!-- Nota média calculada automaticamente pelo JavaScript. -->
+                <div class="resumo-avaliacoes">
+                    <span class="nota-media">—</span>
+                    <div>
+                        <div class="estrelas-media">☆☆☆☆☆</div>
+                        <small class="quantidade-avaliacoes">Nenhuma avaliação ainda</small>
+                    </div>
+                </div>
+
+                <!-- Formulário para enviar uma nova avaliação. -->
+                <form class="formulario-avaliacao">
+                    <div>
+                        <label for="nome-avaliador">Seu nome</label>
+                        <input type="text" id="nome-avaliador" maxlength="40" placeholder="Digite seu nome" required>
+                    </div>
+
+                    <div>
+                        <label for="nota-avaliacao">Sua nota</label>
+                        <select id="nota-avaliacao" required>
+                            <option value="">Selecione uma nota</option>
+                            <option value="5">★★★★★ — Excelente</option>
+                            <option value="4">★★★★☆ — Muito bom</option>
+                            <option value="3">★★★☆☆ — Bom</option>
+                            <option value="2">★★☆☆☆ — Regular</option>
+                            <option value="1">★☆☆☆☆ — Ruim</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="comentario-avaliacao">Seu comentário</label>
+                        <textarea id="comentario-avaliacao" maxlength="500" placeholder="Conte o que achou..." required></textarea>
+                    </div>
+
+                    <button class="botao-enviar-avaliacao" type="submit">Enviar avaliação</button>
+                </form>
+
+                <!-- O JavaScript coloca aqui as avaliações publicadas. -->
+                <div class="lista-avaliacoes"></div>
+            </section>
+
+        
+        </main>
+    </div>
+
+<script src="../js/avaliacoes.js"></script>
+</body>
+
+</html>

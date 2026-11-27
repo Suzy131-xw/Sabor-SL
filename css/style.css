@@ -1,0 +1,2088 @@
+/* CONFIGURAÇÕES GERAIS */
+
+/* Aqui ficam as principais cores utilizadas no site.
+   As variáveis facilitam a alteração das cores,
+   pois podemos reutilizá-las em várias partes do CSS. */
+:root {
+    --green: #004d32;
+    --green2: #006b45;
+    --light: #f4f8f5;
+    --line: #e5ebe7;
+    --text: #17201c;
+    --muted: #6d7772;
+}
+
+
+/* CORPO DA PÁGINA */
+
+/* Define a fonte principal, a cor de fundo
+   e a cor padrão dos textos de toda a página. */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f7f9f8;
+    color: var(--text);
+}
+
+/* Retira o sublinhado dos links e faz com que
+   eles utilizem a mesma cor definida para o conteúdo. */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Deixa os botões com a mesma configuração de fonte
+   usada no restante da página e retira a borda padrão.
+   O cursor muda para indicar que o botão pode ser clicado. */
+button {
+    font: inherit;
+    border: 0;
+    cursor: pointer;
+}
+
+
+/* ESTRUTURA PRINCIPAL */
+
+/* BARRA LATERAL */
+
+/* A barra lateral fica presa no lado esquerdo da tela.
+   O top, left e bottom fazem com que ela ocupe
+   toda a altura disponível.
+   O z-index mantém a barra acima dos outros elementos. */
+.barra-lateral {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+
+    width: 185px;
+
+    background: #ffffff;
+    border-right: 1px solid var(--line);
+
+    padding: 24px 16px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    z-index: 1000;
+}
+
+
+/* LOGO DA BARRA LATERAL */
+
+/* Organiza a logo no centro da barra lateral
+   e cria um espaço entre ela e o menu. */
+.logo-lateral {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+/* Define o tamanho da imagem da logo
+   e mantém suas proporções para evitar deformações. */
+.imagem-logo-lateral {
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* MENU DE NAVEGAÇÃO */
+
+/* Organiza as opções do menu uma abaixo da outra
+   e cria um pequeno espaço entre elas. */
+.navegacao {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+}
+
+/* Cada link do menu ocupa toda a largura disponível.
+   O display flex permite organizar o ícone e o texto
+   lado a lado de forma alinhada. */
+.navegacao a {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 12px;
+
+    box-sizing: border-box;
+
+    border-radius: 8px;
+
+    font-size: 12px;
+
+    color: var(--text);
+
+    transition: background 0.2s ease;
+}
+
+/* Reserva um pequeno espaço para os ícones
+   e mantém cada ícone centralizado dentro dele. */
+.icone-navegacao {
+    width: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 17px;
+}
+
+/* Quando o usuário passa o mouse por uma opção,
+   o fundo muda levemente para mostrar que ela é interativa. */
+.navegacao a:hover {
+    background: #eef3f0;
+}
+
+/* Mostra visualmente qual página está selecionada
+   no momento, usando uma cor de fundo diferente
+   e deixando o texto em negrito. */
+.navegacao a.ativo {
+    background: #eef3f0;
+    color: var(--green);
+    font-weight: 700;
+}
+
+
+/* INFORMAÇÃO DE DELIVERY */
+
+/* Cria uma área separada para mostrar
+   informações relacionadas à entrega.
+   A borda superior ajuda a separar essa parte do menu. */
+.entrega {
+    width: 100%;
+
+    margin-top: 25px;
+    padding-top: 18px;
+
+    border-top: 1px solid var(--line);
+
+    box-sizing: border-box;
+
+    font-size: 11px;
+
+    color: var(--muted);
+}
+
+/* Coloca o ícone e o título do delivery
+   lado a lado e mantém os dois centralizados. */
+.titulo-entrega {
+    display: flex;
+    align-items: center;
+
+    gap: 6px;
+
+    margin-bottom: 5px;
+
+    color: var(--text);
+}
+
+/* Organiza o nome da cidade abaixo do título
+   e cria um pequeno espaço à esquerda para alinhamento. */
+.entrega > span {
+    display: block;
+
+    padding-left: 25px;
+
+    line-height: 1.4;
+}
+
+
+/* CONTEÚDO PRINCIPAL */
+
+/* A área principal fica ao lado da barra lateral.
+   A posição relativa também permite que outros elementos
+   sejam posicionados em relação a ela. */
+.principal {
+    position: relative;
+
+    margin-left: 185px;
+
+    width: calc(100% - 185px);
+
+    min-height: 100vh;
+
+    padding: 20px 24px;
+
+    box-sizing: border-box;
+}
+
+
+/* ÁREA PRINCIPAL DO SITE */
+
+/* Define a estrutura geral da aplicação.
+   O position relative cria uma referência para
+   elementos que precisem ser posicionados dentro dela. */
+.aplicacao {
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Mantém o conteúdo principal afastado da barra lateral,
+   evitando que uma parte da página fique escondida atrás dela. */
+.principal {
+    position: relative;
+    margin-left: 185px;
+    width: calc(100% - 185px);
+    min-height: 100vh;
+    padding: 20px 24px;
+    box-sizing: border-box;
+}
+
+
+/* LOGOS INTERNAS */
+
+/* Organiza a logo e o nome lado a lado
+   e cria um espaço entre os dois elementos. */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    margin: 0 10px 30px;
+}
+
+/* Cria a pequena caixa usada como parte visual da logo.
+   O border-radius deixa os cantos arredondados. */
+.caixa-logo {
+    width: 38px;
+    height: 35px;
+    background: var(--green);
+    color: white;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    font-size: 18px;
+}
+
+/* Ajusta o texto menor que aparece junto à logo,
+   deixando-o mais discreto que o nome principal. */
+.logo small {
+    display: block;
+    color: #777;
+    font-weight: 400;
+    font-size: 9px;
+    margin-top: 3px;
+}
+
+
+/* BARRA SUPERIOR */
+
+/* Organiza os elementos que ficam no topo da página.
+   O espaço entre eles permite deixar uma informação
+   de cada lado da barra. */
+.barra-superior {
+    height: 42px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+
+/* LOCALIZAÇÃO */
+
+/* Define o tamanho pequeno do texto
+   usado para apresentar a localização. */
+.localizacao {
+    font-size: 11px;
+}
+
+
+/* NOME DA CIDADE */
+
+/* Faz o nome da cidade aparecer em uma nova linha
+   e dá um pequeno destaque ao texto. */
+.localizacao b {
+    display: block;
+    font-size: 12px;
+    margin-top: 3px;
+}
+
+
+/* ÁREA DOS BOTÕES SUPERIORES */
+
+/* Coloca os botões da parte superior lado a lado
+   com um pequeno espaço entre eles. */
+.acoes {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* BOTÕES ARREDONDADOS */
+
+/* Define o visual dos botões de status,
+   usando fundo claro e cantos arredondados. */
+.botao-status {
+    background: #eef3f0;
+    padding: 9px 13px;
+    border-radius: 9px;
+    font-size: 11px;
+}
+
+
+/* BANNER PRINCIPAL */
+
+/* O position relative cria uma área de referência
+   para a imagem que será posicionada dentro do banner.
+   O z-index ajuda a controlar a ordem dos elementos. */
+.destaque {
+    position: relative;
+    z-index: 1;
+    height: 207px;
+    border-radius: 15px;
+
+    background: linear-gradient(100deg, #004d32, #006441);
+
+    color: #fff;
+    padding: 28px 22px;
+
+    overflow: hidden;
+}
+
+
+/* TÍTULO DO BANNER */
+
+/* Aumenta o destaque do título e limita sua largura
+   para que ele fique bem organizado dentro do banner. */
+.destaque h1 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 27px;
+    max-width: 310px;
+    line-height: 1.05;
+    margin-bottom: 12px;
+}
+
+
+/* TEXTO DO BANNER */
+
+/* Controla o tamanho e o espaçamento do texto
+   apresentado abaixo do título. */
+.destaque p {
+    font-size: 12px;
+    line-height: 1.5;
+    max-width: 320px;
+}
+
+
+/* BOTÃO PRINCIPAL */
+
+/* Deixa o link com aparência de botão,
+   criando destaque para a ação principal do banner. */
+.destaque .chamada-acao {
+    display: inline-block;
+    margin-top: 16px;
+
+    background: #fff;
+    color: #174d39;
+
+    padding: 11px 16px;
+    border-radius: 8px;
+
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* IMAGEM DO BANNER */
+/* A imagem fica posicionada dentro do banner, mantendo o formato original. */
+.imagem-destaque {
+    position: absolute;
+    right: -15px;
+    top: 0;
+    height: 109%;
+    width: 50%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50% 0 0 50%;
+    opacity: .95;
+}
+
+/* LOGIN: a página de entrada fica limpa, sem menu lateral. */
+.pagina-login .barra-lateral { display: none; }
+.pagina-login .aplicacao { display: block; }
+.pagina-login .principal { width: 100%; margin-left: 0; }
+.pagina-login .barra-superior { max-width: 760px; margin: 0 auto; }
+.pagina-login .pagina-conta { max-width: 600px; margin: 30px auto; }
+
+/* Perfil: informações maiores e favoritos na mesma página. */
+.perfil-informacoes { padding: 32px; margin-top: 20px; }
+.perfil-informacoes h2 { font-size: 25px; margin-top: 0; margin-bottom: 24px; }
+.perfil-campo { padding: 15px 0; border-bottom: 1px solid #e5ece7; }
+.perfil-campo strong { display: block; color: #315b45; font-size: 15px; margin-bottom: 7px; }
+.perfil-campo p { font-size: 19px; line-height: 1.6; margin: 0; overflow-wrap: anywhere; }
+.perfil-entrar { display: inline-block; margin-top: 24px; text-decoration: none; }
+.secao-favoritos-perfil { margin-top: 30px; }
+.secao-favoritos-perfil h2 { font-size: 25px; }
+.descricao-perfil { font-size: 16px; color: #6d7772; }
+.aviso-favoritos { padding: 20px; background: #f4f8f5; border-radius: 10px; font-size: 16px; }
+
+/* TÍTULOS */
+
+/* Define o tamanho e o espaçamento padrão
+   dos títulos de segundo nível da página. */
+h2 {
+    font-size: 18px;
+    margin: 24px 0 14px;
+}
+
+
+/* CATEGORIAS E CARDS */
+
+/* Organiza as categorias e os cartões em uma grade.
+   As quatro colunas deixam os elementos distribuídos
+   de maneira uniforme na página. */
+.categorias,
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+
+/* CARD DAS CATEGORIAS */
+
+/* Cria o visual de cada categoria,
+   com fundo branco, borda discreta e cantos arredondados. */
+.categoria {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+
+    padding: 16px;
+    min-height: 70px;
+    display: block;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+/* Ao passar o mouse, a categoria fica verde-clara. */
+.categoria:hover, .categoria:focus-visible {
+    background: #dff5e6;
+    border-color: #a8d9b7;
+    transform: translateY(-2px);
+}
+
+
+/* NOME DA CATEGORIA */
+
+/* Destaca o nome da categoria
+   e faz com que ele fique separado da descrição. */
+.categoria strong {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    display: block;
+}
+
+
+/* DESCRIÇÃO DA CATEGORIA */
+
+/* Deixa a descrição menor e com uma cor mais suave
+   para diferenciá-la do nome da categoria. */
+.categoria span {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+
+/* ÍCONE DA CATEGORIA */
+
+/* Aumenta o tamanho do ícone e faz com que
+   o texto da categoria fique organizado ao seu lado. */
+.categoria .icone {
+    font-size: 23px;
+    float: left;
+    margin-right: 12px;
+}
+
+
+/* CARDS DOS ESTABELECIMENTOS */
+/* Grade flexível: mantém os cartões alinhados e de tamanho consistente. */
+.cartoes {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+/* Cartão com foto circular e informações abaixo, como no modelo enviado. */
+.cartao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 0;
+    min-height: 220px;
+    padding: 16px 14px 14px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 2px 8px rgba(20, 45, 30, 0.05);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.cartao:hover,
+.cartao:focus-visible {
+    transform: translateY(-3px);
+    border-color: #b7d9c2;
+    box-shadow: 0 7px 18px rgba(20, 45, 30, 0.10);
+}
+
+/* Foto redonda, centralizada e com tamanho padronizado. */
+.cartao > img {
+    display: block;
+    width: 112px;
+    height: 112px;
+    min-width: 112px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: 0 auto 12px;
+    border: 3px solid #f0f5f1;
+}
+
+/* Informações alinhadas abaixo da foto. */
+.corpo-cartao {
+    width: 100%;
+    flex: 1;
+    padding: 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cartao h3 {
+    width: 100%;
+    margin: 0 0 5px;
+    font-size: 14px;
+    line-height: 1.35;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.cartao p {
+    width: 100%;
+    margin: 0 0 8px;
+    font-size: 12px;
+    line-height: 1.4;
+    color: var(--muted);
+}
+
+.informacoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px 10px;
+    margin-top: auto;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #555;
+}
+
+.estrela {
+    color: #f0a500;
+}
+
+@media (max-width: 900px) {
+    .cartoes {
+        grid-template-columns: repeat(auto-fill, minmax(165px, 1fr));
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cartoes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .cartao {
+        min-height: 205px;
+        padding: 12px 9px;
+    }
+
+    .cartao > img {
+        width: 88px;
+        height: 88px;
+        min-width: 88px;
+        margin-bottom: 10px;
+    }
+
+    .cartao h3 { font-size: 12px; }
+    .cartao p { font-size: 11px; }
+    .informacoes { font-size: 10px; }
+}
+
+
+/* FAIXA DE INFORMAÇÕES */
+
+/* Cria uma área com informações complementares.
+   O grid divide o espaço em três partes iguais,
+   facilitando a organização dos conteúdos. */
+.faixa-informativa {
+    margin-top: 20px;
+    background: #eef6f0;
+    border-radius: 10px;
+    padding: 20px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+
+    font-size: 10px;
+}
+
+
+/* TÍTULO DAS INFORMAÇÕES */
+
+/* Faz o título aparecer em uma linha própria
+   e deixa um pequeno espaço antes da descrição. */
+.faixa-informativa b {
+    display: block;
+    font-size: 10px;
+    margin-bottom: 3px;
+}
+
+
+/* TEXTO DAS INFORMAÇÕES */
+
+/* Usa uma cor mais clara para diferenciar
+   a descrição do título. */
+.faixa-informativa span {
+    color: #66716c;
+}
+
+
+/* CAMPO DE BUSCA */
+
+/* Cria a aparência do campo de pesquisa,
+   deixando-o parecido com uma caixa de entrada. */
+.caixa-busca {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+
+    padding: 11px 13px;
+    margin: 10px 0 12px;
+
+    color: #8a928e;
+    font-size: 11px;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Faz o campo de texto ocupar o espaço disponível na caixa de busca. */
+.caixa-busca input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--text);
+    font: inherit;
+}
+
+.caixa-busca label {
+    margin-right: 8px;
+    font-size: 16px;
+}
+
+.caixa-busca button {
+    padding: 7px 11px;
+    border-radius: 6px;
+    background: var(--green);
+    color: #fff;
+    font-size: 10px;
+}
+
+.caixa-busca:focus-within {
+    border-color: var(--green2);
+}
+
+
+/* FILTROS DE PESQUISA */
+
+/* Organiza os filtros lado a lado
+   e cria um pequeno espaço entre cada opção. */
+.filtros {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+
+/* BOTÃO DE FILTRO */
+
+/* Define o formato dos filtros,
+   deixando as opções com bordas arredondadas. */
+.filtro {
+    padding: 8px 13px;
+
+    border: 1px solid #dfe5e1;
+    border-radius: 20px;
+
+    background: #fff;
+    font-size: 10px;
+    color: var(--text);
+}
+
+.filtro:hover {
+    cursor: pointer;
+}
+
+
+/* FILTRO SELECIONADO */
+
+/* Mostra qual filtro está selecionado
+   usando a cor verde principal e texto branco. */
+.filtro.ativo {
+    background: var(--green);
+    color: #fff;
+}
+
+
+/* PÁGINA DO RESTAURANTE */
+
+/* Cria o bloco principal com as informações
+   do restaurante e mantém os conteúdos organizados. */
+.restaurante {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+
+    overflow: hidden;
+    margin-bottom: 18px;
+}
+
+
+/* IMAGEM PRINCIPAL DO RESTAURANTE */
+
+/* Define o tamanho da imagem de capa
+   e evita que ela fique deformada. */
+.capa-restaurante {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+
+/* INFORMAÇÕES DO RESTAURANTE */
+
+/* Organiza as informações do restaurante
+   deixando os dados de um lado e as ações do outro. */
+.informacoes-restaurante {
+    padding: 25px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* NOME DO RESTAURANTE */
+
+/* Ajusta o tamanho do título para que ele
+   fique proporcional ao restante das informações. */
+.informacoes-restaurante h1 {
+    font-size: 19px;
+}
+
+
+/* DESCRIÇÃO */
+
+/* Deixa a descrição menor e com uma cor suave,
+   para não chamar mais atenção que o nome. */
+.informacoes-restaurante p {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 5px 0;
+}
+
+
+/* TELEFONE */
+
+/* Destaca o número de contato para que
+   ele seja facilmente identificado na página. */
+.telefone {
+    padding: 7px 7px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* ETIQUETAS */
+
+/* Organiza as pequenas informações
+   do restaurante lado a lado. */
+.etiquetas {
+    display: flex;
+    gap: 7px;
+}
+
+
+/* CADA INFORMAÇÃO */
+
+/* Cria pequenas etiquetas para apresentar
+   informações de maneira organizada e compacta. */
+.etiqueta {
+    font-size: 9px;
+    border: 1px solid var(--line);
+
+    padding: 4px 9px;
+    border-radius: 7px;
+}
+
+
+/* BOTÃO DO WHATSAPP */
+
+/* Dá destaque ao botão de contato,
+   usando a cor principal do site e texto branco. */
+.contato-whatsapp {
+    background: var(--green);
+    color: #fff;
+
+    padding: 11px 15px;
+    border-radius: 8px;
+
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* CARDÁPIO */
+
+/* Define o espaço interno da área
+   onde os pratos do restaurante serão apresentados. */
+.cardapio {
+    padding: 0 20px 18px;
+}
+
+
+/* TÍTULO DO CARDÁPIO */
+
+/* Ajusta o tamanho e o espaçamento
+   do título que apresenta a lista de pratos. */
+.cardapio h2 {
+    margin: 4px 0 12px;
+    font-size: 15px;
+}
+
+
+/* ITEM DO CARDÁPIO */
+
+/* Organiza cada prato em três partes:
+   imagem, informações do prato e preço.
+   O grid facilita manter tudo alinhado. */
+.item-menu {
+    display: grid;
+    grid-template-columns: 85px 1fr auto;
+
+    gap: 10px;
+    align-items: center;
+
+    border: 1px solid var(--line);
+    border-radius: 8px;
+
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+
+/* IMAGEM DO PRATO */
+
+/* Define o tamanho da imagem de cada prato
+   e evita que ela fique deformada. */
+.item-menu img {
+    width: 85px;
+    height: 72px;
+    object-fit: cover;
+}
+
+
+/* NOME DO PRATO */
+
+/* Destaca o nome do prato dentro do item do cardápio. */
+.item-menu h3 {
+    font-size: 12px;
+}
+
+
+/* DESCRIÇÃO DO PRATO */
+
+/* Apresenta uma descrição menor abaixo
+   do nome do prato. */
+.item-menu p {
+    font-size: 9px;
+    color: var(--muted);
+    margin-top: 3px;
+}
+
+
+/* PREÇO DO PRATO */
+
+/* Deixa o preço em destaque para que
+   seja fácil encontrá-lo no cardápio. */
+.preço {
+    font-size: 10px;
+    font-weight: 700;
+}
+
+
+/* PERFIL DO USUÁRIO */
+
+/* Cria os blocos principais da área de perfil
+   e das configurações, usando fundo branco,
+   bordas suaves e cantos arredondados. */
+.caixa-perfil,
+.grade-configuracoes {
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+
+/* CABEÇALHO DO PERFIL */
+
+/* Organiza a foto e as informações do usuário
+   lado a lado e cria uma divisão visual abaixo delas. */
+.cabecalho-perfil {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 18px;
+    margin-bottom: 4px;
+}
+
+
+/* FOTO DO USUÁRIO */
+
+/* Cria uma área circular para representar
+   a foto ou avatar do usuário. */
+.avatar {
+    width: 60px;
+    height: 60px;
+
+    border-radius: 50%;
+    background: var(--green);
+    color: #fff;
+
+    display: grid;
+    place-items: center;
+
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+/* NOME DO USUÁRIO */
+
+/* Ajusta o tamanho do nome apresentado
+   no cabeçalho do perfil. */
+.cabecalho-perfil h1 {
+    font-size: 16px;
+}
+
+
+/* DATA DE CADASTRO */
+
+/* Apresenta a data de cadastro de forma menor
+   e com uma cor mais discreta. */
+.cabecalho-perfil p {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 4px;
+}
+
+
+/* INFORMAÇÕES DO PERFIL */
+
+/* Organiza cada informação em três espaços:
+   o nome do campo, o valor e a opção de alteração. */
+.linha {
+    display: grid;
+    grid-template-columns: 120px 1fr auto;
+
+    align-items: center;
+
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+
+    font-size: 10px;
+}
+
+
+/* REMOVE A LINHA DO ÚLTIMO ITEM */
+
+/* O último item não precisa de uma borda inferior,
+   deixando o final da lista mais limpo visualmente. */
+.linha:last-child {
+    border-bottom: 0;
+}
+
+
+/* NOME DO CAMPO */
+
+/* Usa uma cor mais suave para diferenciar
+   o nome do campo da informação principal. */
+.linha .label {
+    color: #66716c;
+}
+
+
+/* BOTÃO ALTERAR */
+
+/* Cria um botão discreto para permitir
+   que o usuário altere uma informação do perfil. */
+.editar {
+    border: 1px solid #9bb9a9;
+    background: #fff;
+    color: #14523a;
+
+    padding: 6px 10px;
+    border-radius: 6px;
+
+    font-size: 9px;
+}
+
+
+/* CONFIGURAÇÕES */
+
+/* Divide as opções de configuração em duas colunas,
+   mantendo um espaço uniforme entre os cartões. */
+.grade-configuracoes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+
+/* CADA CONFIGURAÇÃO */
+
+/* Cada configuração recebe sua própria caixa,
+   facilitando a visualização e organização das opções. */
+.configuracao {
+    border: 1px solid var(--line);
+    border-radius: 9px;
+
+    padding: 16px;
+    min-height: 85px;
+}
+
+
+/* NOME DA CONFIGURAÇÃO */
+
+/* Destaca o nome da configuração
+   e cria espaço antes da descrição. */
+.configuracao b {
+    font-size: 11px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* DESCRIÇÃO DA CONFIGURAÇÃO */
+
+/* Mantém a descrição menor e com uma cor mais clara,
+   deixando o nome da configuração em maior destaque. */
+.configuracao span {
+    font-size: 9px;
+    color: var(--muted);
+}
+
+
+/* ÁREA DO PROJETO */
+
+/* Cria uma área de destaque para apresentar
+   informações sobre o projeto e suas desenvolvedoras. */
+.projeto {
+    background: var(--green);
+    color: #fff;
+
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 12px;
+}
+
+
+/* TEXTO PEQUENO */
+
+/* Ajusta o tamanho das informações secundárias
+   apresentadas dentro da área do projeto. */
+.projeto small {
+    font-size: 9px;
+}
+
+
+/* NOME DAS DESENVOLVEDORAS */
+
+/* Destaca o nome das desenvolvedoras
+   usando um tamanho maior e uma organização em linhas. */
+.projeto h2 {
+    font-size: 18px;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
+
+/* INFORMAÇÕES DO PROJETO */
+
+/* Define o tamanho e o espaçamento do texto
+   que explica informações sobre o projeto. */
+.projeto p {
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+/* BOTÃO VOLTAR */
+
+/* Cria um botão simples para retornar à página anterior,
+   deixando-o separado visualmente do restante do conteúdo. */
+.voltar {
+    position:static;
+    display: inline-block;
+
+    background: #eef3f0;
+
+    padding: 8px 12px;
+    border-radius: 8px;
+
+    font-size: 10px;
+    margin-bottom: 10px;
+}
+.caixa-busca {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 1px solid #e5ebe7;
+    border-radius: 9px;
+    padding: 8px 12px;
+    margin: 10px 0 12px;
+}
+
+.caixa-busca input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    font: inherit;
+}
+
+.caixa-busca button {
+    padding: 7px 11px;
+    border: 0;
+    border-radius: 6px;
+    background: #004d32;
+    color: #fff;
+    cursor: pointer;
+}
+
+
+/* LOGIN, FAVORITOS E INTERAÇÕES */
+.botao-favorito { position:absolute; top:10px; right:10px; z-index:3; background:#fff; color:#b42335; border:1px solid #e5ebe7; border-radius:50%; width:36px; height:36px; font-size:20px; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #0001; }
+.botao-favorito.esta-favorito { background:#ffe8eb; color:#b42335; }
+.cartao-favoritavel { position:relative; }
+.cartao-favoritavel img { display:block; }
+.pagina-conta { max-width:560px; margin:30px auto; padding:28px; background:#fff; border:1px solid var(--line); border-radius:16px; box-shadow:0 8px 28px #1231; }
+.pagina-conta h1 { margin:0 0 8px; font-size:26px; }
+.pagina-conta p { color:var(--muted); line-height:1.5; }
+.formulario-conta { display:grid; gap:14px; margin-top:22px; }
+.formulario-conta label { display:grid; gap:7px; font-size:13px; font-weight:700; }
+.formulario-conta input { width:100%; padding:12px 13px; border:1px solid var(--line); border-radius:8px; box-sizing:border-box; font:inherit; }
+.formulario-conta input:focus { outline:2px solid #a8d9b7; border-color:#75b88a; }
+.botao-verde { display:inline-flex; justify-content:center; padding:12px 16px; border-radius:8px; background:var(--green); color:#fff; font-weight:700; }
+.link-conta { color:var(--green2); text-decoration:underline; }
+.mensagem-conta { padding:10px; border-radius:8px; background:#e5f7e9; color:#14532d; }
+.cartoes-favoritos { margin-top:18px; }
+@media (max-width:700px) { .imagem-destaque { width:45%; height:88%; top:6%; right:-8px; opacity:.9; } .destaque h1 { max-width:58%; font-size:23px; } .destaque p { max-width:56%; } .pagina-conta { margin:16px 0; padding:20px; } .perfil-informacoes { padding:22px; } .perfil-campo p { font-size:17px; } }
+
+
+/* FOTO ÚNICA DO PERFIL */
+.perfil-informacoes {
+    display: block;
+    align-items: initial;
+    padding: 28px;
+    margin-top: 20px;
+}
+.perfil-informacoes .perfil-foto-linha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    margin: 0 auto 26px;
+    max-width: 620px;
+}
+.foto-perfil {
+    display: none;
+    width: 112px;
+    height: 112px;
+    flex: 0 0 112px;
+    border-radius: 50%;
+    border: 2px solid #d5e2da;
+    object-fit: cover;
+    background: #eef3f0;
+}
+.perfil-foto-controles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    min-width: 0;
+}
+.perfil-foto-controles label { color: var(--green); }
+.perfil-foto-controles input { max-width: 100%; font-size: 13px; }
+.perfil-foto-controles small { color: var(--muted); font-size: 12px; }
+.perfil-remover-foto {
+    border: 0;
+    border-radius: 8px;
+    background: var(--green);
+    color: #fff;
+    padding: 10px 18px;
+    cursor: pointer;
+}
+.perfil-informacoes .perfil-campo { width: 100%; box-sizing: border-box; }
+@media (max-width: 600px) {
+    .perfil-informacoes { padding: 18px; }
+    .perfil-informacoes .perfil-foto-linha { align-items: flex-start; gap: 12px; }
+    .foto-perfil { width: 82px; height: 82px; flex-basis: 82px; }
+    .perfil-foto-controles input { width: 100%; }
+}
+
+
+/* Fluxo de entrada e cadastro */
+.modos-conta { display:flex; gap:10px; margin-top:20px; }
+.modo-conta { flex:1; border:1px solid var(--line); border-radius:9px; padding:11px 14px; background:#f3f6f3; color:var(--green); cursor:pointer; font:inherit; font-weight:700; }
+.modo-conta.ativo { background:var(--green); color:#fff; border-color:var(--green); }
+.formulario-conta label[hidden], .formulario-conta input[hidden] { display:none !important; }
+.mensagem-erro { background:#fff0ef !important; color:#9f2525 !important; }
+.perfil-sem-login { text-align:center; padding:18px 10px 24px; }
+.perfil-sem-login h2 { color:var(--green); margin-bottom:10px; }
+.perfil-sem-login p { margin:0 auto 20px; }
+.perfil-acoes-conta { display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:center; margin-top:16px; }
+.botao-contorno { display:inline-flex; justify-content:center; align-items:center; padding:11px 16px; border:1px solid var(--green); border-radius:8px; background:transparent; color:var(--green); font:inherit; font-weight:700; text-decoration:none; cursor:pointer; }
+
+
+/* Ajustes específicos da busca, mantendo a identidade visual original do Sabor SL. */
+.pagina-busca .titulo-busca {
+    font-size: 22px;
+    margin: 14px 0 12px;
+}
+.pagina-busca .caixa-busca {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 44px;
+    margin: 10px 0 12px;
+}
+.pagina-busca .filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+.pagina-busca .filtro {
+    padding: 8px 14px;
+    font-size: 11px;
+}
+.pagina-busca .contador-resultados {
+    font-size: 12px;
+    color: var(--muted);
+    margin: 0 0 14px;
+}
+.pagina-busca #lista-estabelecimentos {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+.pagina-busca #lista-estabelecimentos .cartao {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    min-width: 0;
+    min-height: 220px;
+    padding: 38px 20px 18px;
+    border-radius: 16px;
+    box-sizing: border-box;
+}
+.pagina-busca #lista-estabelecimentos .cartao > img {
+    width: 96px;
+    height: 96px;
+    min-width: 96px;
+    margin: 0 auto 12px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.pagina-busca #lista-estabelecimentos .corpo-cartao {
+    width: 100%;
+    align-items: flex-start;
+    text-align: left;
+}
+.pagina-busca #lista-estabelecimentos .cartao h3,
+.pagina-busca #lista-estabelecimentos .cartao p {
+    text-align: left;
+}
+.pagina-busca #lista-estabelecimentos .informacoes {
+    justify-content: flex-start;
+    width: 100%;
+}
+.pagina-busca #lista-estabelecimentos .botao-favorito {
+    top: 12px;
+    right: 14px;
+    width: 38px;
+    height: 38px;
+    font-size: 23px;
+    background: #fff0f1;
+    border-color: #f4dadd;
+}
+.pagina-busca #lista-estabelecimentos .botao-favorito.esta-favorito {
+    background: #ffe0e4;
+}
+.pagina-busca #lista-estabelecimentos .cartao[hidden] {
+    display: none !important;
+}
+.pagina-busca .mensagem-sem-resultados {
+    color: var(--muted);
+    padding: 14px 0;
+}
+@media (max-width: 900px) {
+    .pagina-busca #lista-estabelecimentos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+@media (max-width: 560px) {
+    .pagina-busca #lista-estabelecimentos {
+        grid-template-columns: 1fr;
+    }
+    .pagina-busca #lista-estabelecimentos .cartao {
+        min-height: 205px;
+    }
+}
+
+
+/* RESPONSIVIDADE PARA CELULAR */
+@media (max-width: 767px) {
+
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    img, video {
+        max-width: 100%;
+    }
+
+    .pagina-busca #lista-estabelecimentos {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-busca #lista-estabelecimentos .cartao {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .caixa-equipe {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar-equipe {
+        max-width: 100%;
+    }
+}
+
+
+/* AJUSTES EXCLUSIVOS PARA CELULAR */
+@media (max-width: 767px) {
+
+    /* Esconde o menu lateral do computador */
+    .barra-lateral {
+        display: none;
+    }
+
+    /* Faz o conteudo ocupar a tela inteira */
+    .aplicacao {
+        display: block;
+        width: 100%;
+    }
+
+    .principal {
+        margin-left: 0;
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+    }
+
+    /* Organiza a localizacao e os botoes */
+    .barra-superior {
+        height: auto;
+        max-width: none;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 14px;
+        margin-bottom: 20px;
+    }
+
+    .localizacao {
+        font-size: 12px;
+    }
+
+    .acoes {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .botao-status {
+        min-width: 0;
+        padding: 12px 5px;
+        text-align: center;
+        font-size: 11px;
+        overflow-wrap: anywhere;
+    }
+
+    /* Corrige o banner */
+    .destaque {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+        padding: 24px 18px;
+        box-sizing: border-box;
+    }
+
+    .destaque h1 {
+        max-width: 60%;
+        font-size: 25px;
+        line-height: 1.15;
+    }
+
+    .destaque p {
+        max-width: 60%;
+        font-size: 12px;
+    }
+
+    .imagem-destaque {
+        position: absolute;
+        width: 38%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        object-fit: cover;
+        border-radius: 45% 0 0 45%;
+    }
+
+    /* Categorias em duas colunas */
+    .categorias {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .categoria {
+        min-width: 0;
+        padding: 14px 10px;
+        box-sizing: border-box;
+    }
+
+    /* Informações em uma coluna */
+    .faixa-informativa {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        padding: 18px;
+    }
+   /* Botão voltar na página de busca */
+.botao-voltar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    margin-bottom: 25px;
+
+    background-color: #edf3ef;
+    color: #1b2923;
+
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 500;
+
+    border-radius: 16px;
+}
+}
+
+
+/* RESPONSIVIDADE - SOBRE NÓS */
+@media (max-width: 767px) {
+
+    .caixa-equipe {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .caixa-equipe > * {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .avatar-equipe {
+        width: 150px;
+        height: 150px;
+        max-width: 100%;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+}
+
+
+/* =========================================================
+   LOCALIZAÇÃO E AVALIAÇÕES DOS ESTABELECIMENTOS
+   Estas regras foram adicionadas sem alterar o visual original.
+   ========================================================= */
+
+/* Caixa geral das novas seções */
+.secao-localizacao,
+.secao-avaliacoes {
+    background: #ffffff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 22px;
+    margin-top: 22px;
+}
+
+/* Título e texto de apoio */
+.secao-localizacao h2,
+.secao-avaliacoes h2 {
+    margin: 0 0 10px;
+    color: var(--green);
+}
+
+.texto-apoio-localizacao,
+.texto-apoio-avaliacoes {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+/* Endereço do estabelecimento */
+.endereco-estabelecimento {
+    padding: 12px 14px;
+    margin: 14px 0;
+    background: var(--light);
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+/* Área onde o mapa será exibido depois que o endereço for preenchido */
+.mapa-estabelecimento {
+    width: 100%;
+    min-height: 250px;
+    border: 0;
+    border-radius: 10px;
+    background: #eef3f0;
+}
+
+.aviso-mapa {
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    color: var(--muted);
+    background: #f4f8f5;
+    border: 1px dashed #b9c9bf;
+    border-radius: 10px;
+    line-height: 1.6;
+}
+
+/* Resumo da nota média */
+.resumo-avaliacoes {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    margin: 14px 0 20px;
+    background: var(--light);
+    border-radius: 9px;
+}
+
+.nota-media {
+    color: #d99a00;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.estrelas-media {
+    color: #e0a000;
+    letter-spacing: 2px;
+}
+
+/* Formulário para enviar uma avaliação */
+.formulario-avaliacao {
+    display: grid;
+    gap: 12px;
+}
+
+.formulario-avaliacao label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.formulario-avaliacao input,
+.formulario-avaliacao textarea,
+.formulario-avaliacao select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 11px 12px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--text);
+    font: inherit;
+}
+
+.formulario-avaliacao textarea {
+    min-height: 95px;
+    resize: vertical;
+}
+
+.botao-enviar-avaliacao {
+    justify-self: start;
+    background: var(--green);
+    color: #fff;
+    padding: 11px 18px;
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+.botao-enviar-avaliacao:hover {
+    background: var(--green2);
+}
+
+/* Lista de comentários já publicados */
+.lista-avaliacoes {
+    display: grid;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.avaliacao-item {
+    padding: 14px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: #fff;
+}
+
+.avaliacao-cabecalho {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.avaliacao-nome {
+    font-weight: 700;
+    color: var(--text);
+}
+
+.avaliacao-estrelas {
+    color: #e0a000;
+    letter-spacing: 1px;
+}
+
+.avaliacao-comentario {
+    margin: 9px 0 0;
+    color: #46524b;
+    font-size: 14px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+.sem-avaliacoes {
+    color: var(--muted);
+    padding: 14px;
+    background: var(--light);
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+@media (max-width: 650px) {
+    .secao-localizacao,
+    .secao-avaliacoes {
+        padding: 16px;
+    }
+
+    .mapa-estabelecimento {
+        min-height: 210px;
+    }
+}
+
+
+/* =========================================================
+   AJUSTE DE LAYOUT E RESPONSIVIDADE — NOV/2026
+   Evita que o menu lateral cubra localização e avaliações.
+   ========================================================= */
+
+/* Base consistente para todas as páginas internas */
+html {
+    scroll-behavior: smooth;
+    width: 100%;
+}
+body {
+    margin: 0;
+    min-width: 320px;
+    width: 100%;
+}
+.aplicacao {
+    width: 100%;
+    min-width: 0;
+}
+
+/* Desktop: menu com largura reservada e conteúdo independente */
+.barra-lateral {
+    width: 220px;
+    z-index: 20;
+    overflow-y: auto;
+}
+.principal {
+    width: calc(100% - 220px);
+    margin-left: 220px;
+    min-width: 0;
+    position: relative;
+    z-index: 1;
+    padding: 24px clamp(18px, 3vw, 42px);
+}
+.principal > *,
+.secao-localizacao,
+.secao-avaliacoes {
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.secao-localizacao,
+.secao-avaliacoes {
+    position: relative;
+    z-index: 1;
+    clear: both;
+}
+.mapa-estabelecimento,
+.area-mapa,
+.area-mapa iframe {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+.area-mapa iframe {
+    min-height: 250px;
+    border: 0;
+    border-radius: 10px;
+}
+.formulario-avaliacao > div {
+    min-width: 0;
+}
+.formulario-avaliacao input,
+.formulario-avaliacao textarea,
+.formulario-avaliacao select {
+    min-width: 0;
+}
+
+/* Telas médias: mantém o menu, mas reduz seus espaços */
+@media (min-width: 768px) and (max-width: 1050px) {
+    .barra-lateral {
+        width: 190px;
+        padding: 20px 12px;
+    }
+    .principal {
+        width: calc(100% - 190px);
+        margin-left: 190px;
+        padding: 20px;
+    }
+    .navegacao a {
+        padding: 10px 8px;
+        font-size: 12px;
+    }
+}
+
+/* Celular: menu passa para o topo e deixa de ficar sobre o conteúdo */
+@media (max-width: 767px) {
+    html, body {
+        overflow-x: hidden;
+    }
+    .aplicacao {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    .barra-lateral {
+        display: flex;
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        padding: 10px 12px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+        overflow: visible;
+        z-index: 2;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .logo-lateral {
+        margin: 0;
+        justify-content: flex-start;
+    }
+    .imagem-logo-lateral {
+        width: 54px;
+        height: 54px;
+    }
+    .navegacao {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 5px;
+    }
+    .navegacao a {
+        width: 100%;
+        min-width: 0;
+        min-height: 44px;
+        padding: 7px 4px;
+        justify-content: center;
+        flex-direction: column;
+        gap: 3px;
+        text-align: center;
+        font-size: 10px;
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+    .icone-navegacao {
+        width: auto;
+        font-size: 17px;
+    }
+    .entrega {
+        display: none;
+    }
+    .principal {
+        display: block;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 14px;
+        min-height: auto;
+        box-sizing: border-box;
+    }
+    .barra-superior {
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+    .informacoes-restaurante {
+        padding: 17px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+    .etiquetas {
+        flex-wrap: wrap;
+    }
+    .contato-whatsapp {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    .secao-localizacao,
+    .secao-avaliacoes {
+        width: 100%;
+        padding: 16px;
+        margin-top: 16px;
+        overflow-wrap: anywhere;
+    }
+    .resumo-avaliacoes {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .avaliacao-cabecalho {
+        align-items: flex-start;
+    }
+    .formulario-avaliacao {
+        width: 100%;
+    }
+    .formulario-avaliacao input,
+    .formulario-avaliacao textarea,
+    .formulario-avaliacao select {
+        font-size: 16px; /* evita zoom automático em celulares */
+    }
+    .botao-enviar-avaliacao {
+        width: 100%;
+        justify-self: stretch;
+        min-height: 44px;
+    }
+    .area-mapa iframe,
+    .mapa-estabelecimento {
+        min-height: 210px;
+    }
+}
+
+/* Celulares estreitos */
+@media (max-width: 380px) {
+    .principal {
+        padding: 10px;
+    }
+    .navegacao a {
+        font-size: 9px;
+        padding-inline: 2px;
+    }
+    .secao-localizacao,
+    .secao-avaliacoes {
+        padding: 13px;
+    }
+}
+
+
+/* AJUSTE FINAL: evita sobreposição do menu com localização e avaliações */
+.aplicacao { display:flex; align-items:flex-start; width:100%; min-width:0; }
+.aplicacao > .barra-lateral { position:sticky; top:0; left:auto; bottom:auto; flex:0 0 220px; width:220px; height:100vh; max-height:100vh; z-index:5; overflow-y:auto; }
+.aplicacao > .principal { flex:1 1 0; width:auto; min-width:0; max-width:calc(100% - 220px); margin-left:0; position:relative; z-index:1; box-sizing:border-box; }
+.aplicacao .secao-localizacao, .aplicacao .secao-avaliacoes { width:100%; max-width:100%; min-width:0; clear:both; overflow-wrap:anywhere; box-sizing:border-box; }
+.aplicacao .area-mapa, .aplicacao .area-mapa iframe, .aplicacao .formulario-avaliacao { width:100%; max-width:100%; min-width:0; box-sizing:border-box; }
+@media (min-width:768px) and (max-width:1050px) { .aplicacao > .barra-lateral { flex-basis:190px; width:190px; } .aplicacao > .principal { max-width:calc(100% - 190px); padding:20px 16px; } }
+@media (max-width:767px) { .aplicacao { display:flex; flex-direction:column; align-items:stretch; } .aplicacao > .barra-lateral { position:relative; top:auto; flex:0 0 auto; width:100%; height:auto; max-height:none; overflow:visible; z-index:2; } .aplicacao > .principal { flex:1 1 auto; width:100%; max-width:100%; margin:0; padding:16px; } }
+
+
+/* ===== Atualização visual inspirada nas referências enviadas ===== */
+body:not(.pagina-login) { background: #f8f9ef; }
+:root { --green: #005437; --green2: #087044; --light: #f0f7e9; --line: #e4e9df; }
+.principal:not(.login-principal) { padding: 18px 28px 36px; }
+.barra-lateral { background: #005437; color: #fff; border: 0; border-radius: 0 22px 22px 0; }
+.barra-lateral .navegacao a { color: #fff; border-radius: 22px; font-size: 13px; }
+.barra-lateral .navegacao a:hover,
+.barra-lateral .navegacao a.ativo { background: #087044; color: #fff; }
+.barra-lateral .entrega { border-color: rgba(255,255,255,.25); color: #d7e9dc; }
+.barra-lateral .titulo-entrega { color: #fff; }
+.destaque { height: 290px; padding: 38px 34px; border-radius: 18px; background: #f4f7e9; color: #005437; }
+.destaque h1 { max-width: 470px; font-family: Arial, Helvetica, sans-serif; font-size: clamp(30px, 3.4vw, 46px); font-weight: 800; line-height: 1.08; }
+.destaque p { max-width: 430px; font-size: 17px; color: #17201c; }
+.destaque .chamada-acao { margin-top: 12px; padding: 14px 24px; border-radius: 28px; background: #ffc928; color: #17201c; font-size: 15px; }
+.imagem-destaque { width: 48%; height: 100%; right: 0; top: 0; border-radius: 50% 0 0 50%; object-position: center; }
+#categorias { margin-top: 26px; }
+#categorias h2, .titulo-secao h2 { font-family: Arial, Helvetica, sans-serif; font-size: 23px; margin: 0 0 16px; font-weight: 800; }
+#categorias h2::before, .titulo-secao h2::before { content: ""; display: inline-block; width: 5px; height: 26px; margin-right: 12px; border-radius: 5px; vertical-align: -5px; background: #087044; }
+.categorias { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+.categoria { min-height: 0; padding: 0 0 14px; border-radius: 16px; overflow: hidden; text-align: center; box-shadow: 0 3px 8px rgba(15,50,30,.08); }
+.categoria-foto { display: block; width: 100%; height: 126px; object-fit: cover; object-position: center; }
+.categoria strong { margin: 12px 8px 4px; font-family: Arial, Helvetica, sans-serif; font-size: 17px; }
+.categoria span:not(.icone) { font-size: 12px; }
+.secao-populares { margin-top: 30px; }
+.titulo-secao { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; }
+.titulo-secao h2 { margin: 0; }
+.titulo-secao > a { color: #005437; font-size: 13px; font-weight: 700; white-space: nowrap; }
+.cartoes-populares { grid-template-columns: repeat(5, minmax(0,1fr)); gap: 14px; }
+.cartoes-populares .cartao { min-height: 230px; padding: 16px 10px 12px; border-radius: 17px; }
+.cartoes-populares .cartao > img { width: 104px; height: 104px; min-width: 104px; border: 0; }
+.cartoes-populares .cartao h3 { text-align: left; font-size: 14px; }
+.cartoes-populares .cartao .informacoes { justify-content: flex-start; width: 100%; font-size: 11px; }
+.faixa-informativa { margin-top: 30px; border-radius: 16px; }
+
+/* Tela de login em duas áreas, com painel verde e cartão claro */
+.pagina-login { min-height: 100vh; background: #005437; }
+.pagina-login .aplicacao { min-height: 100vh; }
+.pagina-login .login-principal { margin: 0; width: 100%; padding: 0; min-height: 100vh; }
+.login-layout { min-height: 100vh; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(440px, .85fr); gap: 0; align-items: stretch; }
+.login-hero { position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: center; padding: 54px clamp(28px, 6vw, 95px); color: #fff; background: radial-gradient(circle at 80% 10%, #16794d 0, transparent 32%), linear-gradient(145deg, #00472d, #00613b); }
+.login-hero::before, .login-hero::after { content: ""; position: absolute; border: 1px solid rgba(255,255,255,.09); border-radius: 50%; width: 430px; height: 430px; right: -150px; top: -170px; }
+.login-hero::after { width: 280px; height: 280px; right: -65px; top: auto; bottom: -140px; }
+.login-logo { width: 180px; height: 130px; object-fit: contain; object-position: left center; position: relative; z-index: 1; }
+.login-slogan { position: relative; z-index: 1; font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4vw, 54px); font-weight: 700; line-height: 1.05; margin: 20px 0 12px; max-width: 600px; }
+.login-descricao { position: relative; z-index: 1; font-size: 17px; line-height: 1.5; max-width: 450px; color: #e5f1e8; }
+.login-foto-comida { position: absolute; bottom: 0; left: 0; right: 0; height: 30%; background: linear-gradient(0deg, rgba(0,35,20,.45), transparent), url('../img/pratodestaque.jpeg') center 52% / cover; opacity: .8; mask-image: linear-gradient(to top, black, transparent); }
+.pagina-login .pagina-conta { align-self: center; width: min(100% - 56px, 580px); max-width: 580px; margin: 24px auto; box-sizing: border-box; padding: 36px 38px 24px; background: #fbfbf6; color: #17201c; border: 1px solid #e5e8df; border-radius: 28px; box-shadow: 0 16px 50px rgba(0,0,0,.15); }
+.pagina-login .pagina-conta h1 { margin: 0 0 8px; text-align: center; color: #005437; font-size: 31px; line-height: 1.15; }
+.pagina-login .conta-intro { margin: 0 auto 22px; max-width: 380px; text-align: center; font-size: 15px; line-height: 1.45; color: #4e5b53; }
+.pagina-login .modos-conta { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
+.pagina-login .modo-conta { padding: 14px 12px; border-radius: 28px; background: #e9f0e2; color: #005437; font-weight: 700; }
+.pagina-login .modo-conta.ativo { background: #00633d; color: #fff; box-shadow: 0 4px 9px rgba(0,60,35,.15); }
+.pagina-login .formulario-conta { display: flex; flex-direction: column; gap: 17px; }
+.pagina-login .formulario-conta label { display: flex; flex-direction: column; gap: 8px; font-size: 14px; font-weight: 600; color: #1f3d2d; }
+.pagina-login .formulario-conta input { width: 100%; box-sizing: border-box; padding: 14px 16px; border: 1px solid #d8ded5; border-radius: 15px; background: #fff; font: inherit; font-weight: 400; outline-color: #087044; }
+.pagina-login .formulario-conta input[hidden] { display: none; }
+.pagina-login .esqueci-senha { align-self: center; margin-top: -8px; color: #005437; font-size: 13px; text-decoration: underline; font-weight: 600; }
+.pagina-login .botao-verde { padding: 15px; border-radius: 28px; background: #00633d; color: #fff; font-size: 16px; font-weight: 700; box-shadow: 0 4px 9px rgba(0,60,35,.15); }
+.pagina-login .separador-login { display: flex; align-items: center; gap: 14px; color: #657068; font-size: 13px; }
+.pagina-login .separador-login::before, .pagina-login .separador-login::after { content: ""; height: 1px; background: #dfe4dc; flex: 1; }
+.pagina-login .login-social { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.pagina-login .login-social button { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 12px 8px; border: 1px solid #e1e5dd; border-radius: 25px; background: #fff; color: #4a554d; font-size: 12px; opacity: 1; }
+.pagina-login .login-social button:disabled { cursor: default; }
+.google-g { color: #4285f4; font-weight: 800; font-size: 18px; }
+.apple-mark { color: #111; font-size: 17px; }
+.pagina-login .link-conta { display: block; text-align: center; color: #005437; font-size: 12px; text-decoration: underline; margin-top: 0; }
+.login-rodape { display: flex; justify-content: center; align-items: center; gap: 8px; border-top: 1px solid #e2e6df; margin-top: 24px; padding-top: 16px; color: #496153; font-size: 11px; text-align: center; }
+.login-rodape span { color: #00633d; font-size: 17px; }
+.pagina-login .mensagem-conta { padding: 10px; border-radius: 10px; background: #e9f4e8; color: #005437; font-size: 13px; }
+@media (max-width: 1000px) {
+  .login-layout { grid-template-columns: minmax(0, .9fr) minmax(400px, 1.1fr); }
+  .login-hero { padding: 35px; }
+  .login-logo { width: 150px; }
+  .login-slogan { font-size: 38px; }
+  .cartoes-populares { grid-template-columns: repeat(3, minmax(0,1fr)); }
+}
+@media (max-width: 700px) {
+  .login-layout { display: block; background: #005437; padding: 0 0 18px; }
+  .login-hero { min-height: 230px; padding: 24px 24px 40px; justify-content: flex-start; }
+  .login-logo { width: 105px; height: 75px; }
+  .login-slogan { font-size: 30px; margin: 8px 0; }
+  .login-descricao { font-size: 13px; max-width: 300px; margin: 0; }
+  .login-foto-comida { height: 24%; opacity: .45; }
+  .pagina-login .pagina-conta { width: calc(100% - 28px); margin: -18px auto 0; position: relative; padding: 26px 20px 20px; border-radius: 24px; }
+  .pagina-login .pagina-conta h1 { font-size: 25px; }
+  .pagina-login .conta-intro { font-size: 13px; }
+  .pagina-login .login-social { grid-template-columns: 1fr; }
+  .pagina-login .login-social button { font-size: 13px; }
+  .pagina-login .login-rodape { font-size: 10px; }
+  .principal:not(.login-principal) { padding: 12px 14px 28px; }
+  .destaque { height: auto; min-height: 260px; padding: 28px 20px; }
+  .destaque h1 { font-size: 30px; max-width: 65%; }
+  .destaque p { font-size: 13px; max-width: 60%; }
+  .imagem-destaque { width: 45%; height: 75%; top: 12%; }
+  .categorias { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+  .categoria-foto { height: 105px; }
+  .categoria strong { font-size: 15px; }
+  #categorias h2, .titulo-secao h2 { font-size: 18px; }
+  .cartoes-populares { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+}

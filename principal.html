@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+
+
+<head>
+    <!-- Define a codificação dos caracteres -->
+    <meta charset="UTF-8">
+
+    <!-- Faz o site se adaptar a celulares -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Ícone que aparece na aba do navegador -->
+    <link
+        rel="shortcut icon"
+        href="img/logo.png"
+        type="image/x-icon"
+    >
+
+    <!-- Nome que aparece na aba do navegador -->
+    <title>Início — Sabor SL</title>
+
+    <!-- Conecta os arquivos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/desenvolvedores.css">
+</head>
+
+<body>
+
+    <!-- estrutura principal do site -->
+    <div class="aplicacao">
+
+        <!-- barra lateral -->
+        <aside class="barra-lateral">
+
+            <!-- logo do site -->
+            <div class="logo-lateral">
+
+                <img
+                    class="imagem-logo-lateral"
+                    src="img/logo.png"
+                    alt="Logo Sabor SL Delivery"
+                >
+
+            </div>
+
+            <!-- menu de navegação -->
+            <nav class="navegacao">
+
+                <!-- página inicial -->
+                <a class="ativo" href="principal.html">
+
+                    <span class="icone-navegacao">🏠</span>
+                    <span>Início</span>
+
+                </a>
+
+                <!-- página de busca -->
+                <a href="buscar.html">
+
+                    <span class="icone-navegacao">⌕</span>
+                    <span>Buscar</span>
+
+                </a>
+
+                <!-- página de perfil -->
+                <a href="perfil.html">
+
+                    <span class="icone-navegacao">👤</span>
+                    <span>Perfil</span>
+
+                </a>
+
+                <!-- página de configurações -->
+                
+
+
+                <a href="configuracoes.html">
+
+                    <span class="icone-navegacao">⚙️</span>
+                    <span>Configurações</span>
+
+                </a>
+
+            </nav>
+
+            <!-- informações do delivery -->
+            <div class="entrega">
+
+                <!-- ícone e nome do serviço -->
+                <div class="titulo-entrega">
+
+                    <span>🛵</span>
+                    <strong>Delivery local</strong>
+
+                </div>
+
+                <!-- cidade atendida -->
+                <span>Santa Luzia - PB</span>
+
+            </div>
+
+        </aside>
+
+        <!-- conteúdo principal -->
+        <main class="principal">
+
+            <!-- barra superior -->
+            <div class="barra-superior">
+
+                <!-- localização -->
+                <div class="localizacao">
+
+                    📍 LOCALIZAÇÃO
+                    <b>Santa Luzia - PB</b>
+
+                </div>
+
+                <!-- botões do topo -->
+                <div class="acoes">
+
+                    <a
+                        class="botao-status"
+                        href="buscar.html"
+                    >
+                        ⌕ Buscar
+                    </a>
+
+                    <a
+                        class="botao-status"
+                        href="perfil.html"
+                    >
+                        👤 Meu perfil
+                    </a>
+
+                    <a
+                        class="botao-status"
+                        href="sobre.html"
+                    >
+                        🤝 Sobre nós
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- banner principal -->
+            <section class="destaque">
+
+                <!-- título do banner -->
+                <h1>
+
+                    Seu sabor favorito
+
+                    <br>
+
+                    está por perto.
+
+                </h1>
+
+                <!-- descrição do site -->
+                <p>
+
+                    Encontre restaurantes e lanches
+                    em Santa Luzia - PB.
+
+                </p>
+
+                <!-- botão para encontrar opções -->
+                <a
+                    class="chamada-acao"
+                    href="#categorias"
+                >
+                    Encontrar opções
+                </a>
+
+                <!-- imagem do banner -->
+                <img
+                    class="imagem-destaque"
+                    src="img/pratodestaque.jpeg"
+                    alt="Comida"
+                >
+
+            </section>
+
+            <!-- categorias de comida -->
+            <section id="categorias">
+
+                <h2>
+                    O que você quer pedir?
+                </h2>
+
+                <div class="categorias">
+
+                    <!-- categoria de restaurantes -->
+                    <a
+                        class="categoria"
+                        href="restaurantes.html"
+                    >
+
+                        <img class="categoria-foto" src="img/pratodestaque.jpeg" alt="Prato de comida">
+
+                        <strong>
+                            Restaurantes
+                        </strong>
+
+                        <span>
+                            Comidas e pratos
+                        </span>
+
+                    </a>
+
+                    <!-- categoria de lanches -->
+                    <a
+                        class="categoria"
+                        href="lanches.html"
+                    >
+
+                        <img class="categoria-foto" src="img/sgds.jpeg" alt="Hambúrguer e lanches">
+
+                        <strong>
+                            Lanches
+                        </strong>
+
+                        <span>
+                            Salgados
+                        </span>
+
+                    </a>
+
+                    <!-- categoria de sobremesas -->
+                    <a
+                        class="categoria"
+                        href="sobremessas.html"
+                    >
+
+                        <img class="categoria-foto" src="img/gelato.jpeg" alt="Sobremesas e doces">
+
+                        <strong>
+                            Sobremesas e Doces
+                        </strong>
+
+                        <span>
+                            Gostosuras
+                        </span>
+
+                    </a>
+
+                
+                </div>
+
+            </section>
+
+            <!-- estabelecimentos populares -->
+            <section class="secao-populares">
+                <div class="titulo-secao">
+                    <h2>Mais populares em Santa Luzia</h2>
+                    <a href="buscar.html">Ver todos →</a>
+                </div>
+                <div class="cartoes cartoes-populares">
+                    <a class="cartao" href="estabelecimentos/casa-das-qtnhs.html">
+                        <img src="img/csdqnths.jpeg" alt="Casa das Quentinhas">
+                        <div class="corpo-cartao"><h3>Casa das Quentinhas</h3><div class="informacoes"><span class="estrela">★</span> Opções de almoço</div></div>
+                    </a>
+                    <a class="cartao" href="estabelecimentos/gelato-do-ze.html">
+                        <img src="img/gelato.jpeg" alt="Gelato do Zé">
+                        <div class="corpo-cartao"><h3>Gelato do Zé</h3><div class="informacoes"><span class="estrela">★</span> Gelados e sobremesas</div></div>
+                    </a>
+                    <a class="cartao" href="estabelecimentos/bar-da-costela.html">
+                        <img src="img/bdc.jpeg" alt="Bar da Costela">
+                        <div class="corpo-cartao"><h3>Bar da Costela</h3><div class="informacoes"><span class="estrela">★</span> Comida regional</div></div>
+                    </a>
+                    <a class="cartao" href="estabelecimentos/mega-salgados.html">
+                        <img src="img/sgds.jpeg" alt="Mega Salgados">
+                        <div class="corpo-cartao"><h3>Mega Salgados</h3><div class="informacoes"><span class="estrela">★</span> Salgados e lanches</div></div>
+                    </a>
+                    <a class="cartao" href="estabelecimentos/vila-acai.html">
+                        <img src="img/vila-acai.jpeg" alt="Vila Açaí">
+                        <div class="corpo-cartao"><h3>Vila Açaí</h3><div class="informacoes"><span class="estrela">★</span> Açaí</div></div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- informações sobre o serviço -->
+            <div class="faixa-informativa">
+
+                <!-- informação sobre comida local -->
+                <div>
+
+                    <b>
+                        🍽️ Comida local
+                    </b>
+
+                    <span>
+                        Opções de Santa Luzia - PB
+                    </span>
+
+                </div>
+
+                <!-- informação sobre entrega -->
+                <div>
+
+                    <span>
+                        🛵
+                    </span>
+
+                    <b>
+                        Entrega
+                    </b>
+
+                    <span>
+                        Receba onde estiver
+                    </span>
+
+                </div>
+
+                <!-- informação sobre facilidade -->
+                <div>
+
+                    <span>
+                        📲
+                    </span>
+
+                    <b>
+                        Fácil de usar
+                    </b>
+
+                    <span>
+                        Escolha e peça
+                    </span>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  try { if (localStorage.getItem("saborSL_usuario")) { const link = document.getElementById("link-entrar-menu"); if (link) link.style.display = "none"; } } catch (e) {}
+});
+</script>
+</body>
+
+</html>
